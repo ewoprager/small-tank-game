@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Small Tank Game</title>
+    
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
+    
+    <style>
+    	#gameScreen {
+    		border: 1px solid black;
+    	}
+	
+		img {
+			display: none;
+		}
+    </style>
+    
+  </head>
+  <body>
+  	<canvas id="gameScreen" width="800" height="600" oncontextmenu="return false;">
+		<img id="img_crusader_hull" src="/Assets/ww2_top_view_tanks/Crusader/ww2_top_view_hull8.png"/>
+		<img id="img_crusader_turret" src="/Assets/ww2_top_view_tanks/Crusader/ww2_top_view_turret8.png"/>
+		<img id="img_plane" src="Assets/ww2_luftwaffe_plane.png"/>
+		<img id="img_upgrade" src="Assets/green_arrow.png"/>
+		<audio src="Assets/Tank Firing.mp3" id="sound_fire"/>
+		<audio src="Assets/distant_explosion.mp3" id="sound_hit"/>
+		<audio src="Assets/Plane crash sound effect.mp3" id="sound_crash"/>
+	</canvas>
+  	
+    <script type="module" src="app.js"></script>
+    
+	<p>Controls</p>
+	<p>move tank: W, A, S, D</p>
+	<p>rotate turret horiontally: Q and E</p>
+	<p>change turret elevation: mouse scroll wheel</p>
+	<p>fire: SPACE</p>
+	<p>mark range on projectile plot: left mouse button (while a range is marked, turret rotation is slowed for longer ranges)</p>
+	<p>Try to hit the planes. The altitudes of the planes are diplayed next to them.</p>
+    <p>Tank sprites credit to https://jimhatama.itch.io/ww2-pixel-top-view-tanks</p>
+	<p>Plane sprites credit to https://www.deviantart.com/sudro/art/Luftwaffe-Sprites-WIP-198271841</p>
+	
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-auth.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-database.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-firestore.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-functions.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-messaging.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-storage.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-analytics.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-remote-config.js"></script> -->
+	<!-- <script defer src="/__/firebase/8.8.0/firebase-performance.js"></script> -->
+
+	<script>
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  var firebaseConfig = {
+		apiKey: "AIzaSyAkdPjFaUAW-FdPLwWZhGL6ixJXezlSYnY",
+		authDomain: "first-4d145.firebaseapp.com",
+		projectId: "first-4d145",
+		storageBucket: "first-4d145.appspot.com",
+		messagingSenderId: "161343902054",
+		appId: "1:161343902054:web:4e937aa366b1df167c38a7",
+		measurementId: "G-YG6QPPKZXH"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  //firebase.analytics();
+	</script>
+  </body>
+</html>
